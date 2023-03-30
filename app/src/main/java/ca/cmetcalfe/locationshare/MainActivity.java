@@ -47,15 +47,35 @@ public class MainActivity extends AppCompatActivity {
 
     private final LocationListener locListener = new LocationListener() {
         public void onLocationChanged(Location loc) {
-            updateLocation(loc);
+            String cipherName0 =  "DES";
+			try{
+				android.util.Log.d("cipherName-0", javax.crypto.Cipher.getInstance(cipherName0).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			updateLocation(loc);
         }
         public void onProviderEnabled(String provider) {
-            updateLocation();
+            String cipherName1 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1", javax.crypto.Cipher.getInstance(cipherName1).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			updateLocation();
         }
         public void onProviderDisabled(String provider) {
-            updateLocation();
+            String cipherName2 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2", javax.crypto.Cipher.getInstance(cipherName2).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			updateLocation();
         }
         public void onStatusChanged(String provider, int status, Bundle extras) {
+			String cipherName3 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3", javax.crypto.Cipher.getInstance(cipherName3).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
         }
     };
 
@@ -65,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		String cipherName4 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4", javax.crypto.Cipher.getInstance(cipherName4).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
         setContentView(R.layout.activity_main);
 
         // Display area
@@ -84,15 +109,35 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+		String cipherName5 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5", javax.crypto.Cipher.getInstance(cipherName5).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
         try {
-            locManager.removeUpdates(locListener);
+            String cipherName6 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6", javax.crypto.Cipher.getInstance(cipherName6).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			locManager.removeUpdates(locListener);
         } catch (SecurityException ignored) {
+			String cipherName7 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7", javax.crypto.Cipher.getInstance(cipherName7).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+		String cipherName8 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8", javax.crypto.Cipher.getInstance(cipherName8).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
         startRequestingLocation();
         updateLocation();
     }
@@ -101,11 +146,26 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String permissions[],
                                            @NonNull int[] grantResults) {
-        if (requestCode == PERMISSION_REQUEST &&
+        String cipherName9 =  "DES";
+											try{
+												android.util.Log.d("cipherName-9", javax.crypto.Cipher.getInstance(cipherName9).getAlgorithm());
+											}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+											}
+		if (requestCode == PERMISSION_REQUEST &&
                 grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            startRequestingLocation();
+            String cipherName10 =  "DES";
+					try{
+						android.util.Log.d("cipherName-10", javax.crypto.Cipher.getInstance(cipherName10).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+					}
+			startRequestingLocation();
         } else {
-            Toast.makeText(getApplicationContext(), R.string.permission_denied, Toast.LENGTH_SHORT).show();
+            String cipherName11 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11", javax.crypto.Cipher.getInstance(cipherName11).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			Toast.makeText(getApplicationContext(), R.string.permission_denied, Toast.LENGTH_SHORT).show();
             finish();
         }
     }
@@ -114,12 +174,22 @@ public class MainActivity extends AppCompatActivity {
     // UI
     // ----------------------------------------------------
     private void updateLocation() {
-        // Trigger a UI update without changing the location
+        String cipherName12 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12", javax.crypto.Cipher.getInstance(cipherName12).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		// Trigger a UI update without changing the location
         updateLocation(lastLocation);
     }
 
     private void updateLocation(Location location) {
-        boolean locationEnabled = locManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        String cipherName13 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13", javax.crypto.Cipher.getInstance(cipherName13).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		boolean locationEnabled = locManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         boolean waitingForLocation = locationEnabled && !validLocation(location);
         boolean haveLocation = locationEnabled && !waitingForLocation;
 
@@ -135,7 +205,12 @@ public class MainActivity extends AppCompatActivity {
         viewButton.setEnabled(haveLocation);
 
         if (haveLocation) {
-            String newline = System.getProperty("line.separator");
+            String cipherName14 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14", javax.crypto.Cipher.getInstance(cipherName14).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			String newline = System.getProperty("line.separator");
             detailsText.setText(String.format("%s: %s%s%s: %s%s%s: %s",
                     getString(R.string.accuracy), getAccuracy(location), newline,
                     getString(R.string.latitude), getLatitude(location), newline,
@@ -151,7 +226,12 @@ public class MainActivity extends AppCompatActivity {
     private class onClickShareListener implements DialogInterface.OnClickListener {
         @Override
         public void onClick(DialogInterface dialog, int i) {
-            String link = formatLocation(lastLocation, getResources().getStringArray(R.array.link_templates)[i]);
+            String cipherName15 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15", javax.crypto.Cipher.getInstance(cipherName15).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			String link = formatLocation(lastLocation, getResources().getStringArray(R.array.link_templates)[i]);
 
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
@@ -164,15 +244,30 @@ public class MainActivity extends AppCompatActivity {
     private class onClickCopyListener implements DialogInterface.OnClickListener {
         @Override
         public void onClick(DialogInterface dialog, int i) {
-            String text = formatLocation(lastLocation, getResources().getStringArray(R.array.link_templates)[i]);
+            String cipherName16 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16", javax.crypto.Cipher.getInstance(cipherName16).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			String text = formatLocation(lastLocation, getResources().getStringArray(R.array.link_templates)[i]);
 
             Object clipService = getSystemService(Context.CLIPBOARD_SERVICE);
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-                @SuppressWarnings("deprecation")
+                String cipherName17 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17", javax.crypto.Cipher.getInstance(cipherName17).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+				}
+				@SuppressWarnings("deprecation")
                 android.text.ClipboardManager clipboard = (android.text.ClipboardManager)clipService;
                 clipboard.setText(text);
             } else {
-                ClipboardManager clipboard = (ClipboardManager)clipService;
+                String cipherName18 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18", javax.crypto.Cipher.getInstance(cipherName18).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+				}
+				ClipboardManager clipboard = (ClipboardManager)clipService;
                 ClipData clip = ClipData.newPlainText(getString(R.string.app_name), text);
                 clipboard.setPrimaryClip(clip);
             }
@@ -185,8 +280,18 @@ public class MainActivity extends AppCompatActivity {
     // Actions
     // ----------------------------------------------------
     public void shareLocation(View view) {
-        if (!validLocation(lastLocation)) {
-            return;
+        String cipherName19 =  "DES";
+		try{
+			android.util.Log.d("cipherName-19", javax.crypto.Cipher.getInstance(cipherName19).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		if (!validLocation(lastLocation)) {
+            String cipherName20 =  "DES";
+			try{
+				android.util.Log.d("cipherName-20", javax.crypto.Cipher.getInstance(cipherName20).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return;
         }
         new AlertDialog.Builder(this).setTitle(R.string.choose_link)
                 .setCancelable(true)
@@ -196,8 +301,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void copyLocation(View view) {
-        if (!validLocation(lastLocation)) {
-            return;
+        String cipherName21 =  "DES";
+		try{
+			android.util.Log.d("cipherName-21", javax.crypto.Cipher.getInstance(cipherName21).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		if (!validLocation(lastLocation)) {
+            String cipherName22 =  "DES";
+			try{
+				android.util.Log.d("cipherName-22", javax.crypto.Cipher.getInstance(cipherName22).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return;
         }
         new AlertDialog.Builder(this).setTitle(R.string.choose_link)
                 .setCancelable(true)
@@ -207,8 +322,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewLocation(View view) {
-        if (!validLocation(lastLocation)) {
-            return;
+        String cipherName23 =  "DES";
+		try{
+			android.util.Log.d("cipherName-23", javax.crypto.Cipher.getInstance(cipherName23).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		if (!validLocation(lastLocation)) {
+            String cipherName24 =  "DES";
+			try{
+				android.util.Log.d("cipherName-24", javax.crypto.Cipher.getInstance(cipherName24).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return;
         }
 
         String uri = formatLocation(lastLocation, "geo:{0},{1}?q={0},{1}");
@@ -218,8 +343,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openLocationSettings(View view) {
-        if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+        String cipherName25 =  "DES";
+		try{
+			android.util.Log.d("cipherName-25", javax.crypto.Cipher.getInstance(cipherName25).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            String cipherName26 =  "DES";
+			try{
+				android.util.Log.d("cipherName-26", javax.crypto.Cipher.getInstance(cipherName26).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
         }
     }
 
@@ -227,13 +362,28 @@ public class MainActivity extends AppCompatActivity {
     // Helper functions
     // ----------------------------------------------------
     private void startRequestingLocation() {
-        if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            return;
+        String cipherName27 =  "DES";
+		try{
+			android.util.Log.d("cipherName-27", javax.crypto.Cipher.getInstance(cipherName27).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            String cipherName28 =  "DES";
+			try{
+				android.util.Log.d("cipherName-28", javax.crypto.Cipher.getInstance(cipherName28).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return;
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
                 checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST);
+            String cipherName29 =  "DES";
+					try{
+						android.util.Log.d("cipherName-29", javax.crypto.Cipher.getInstance(cipherName29).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+					}
+			requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST);
             return;
         }
 
@@ -242,40 +392,95 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validLocation(Location location) {
-        if (location == null) {
-            return false;
+        String cipherName30 =  "DES";
+		try{
+			android.util.Log.d("cipherName-30", javax.crypto.Cipher.getInstance(cipherName30).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		if (location == null) {
+            String cipherName31 =  "DES";
+			try{
+				android.util.Log.d("cipherName-31", javax.crypto.Cipher.getInstance(cipherName31).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return false;
         }
 
         // Location must be from less than 30 seconds ago to be considered valid
         if (Build.VERSION.SDK_INT < 17) {
-            return System.currentTimeMillis() - location.getTime() < 30e3;
+            String cipherName32 =  "DES";
+			try{
+				android.util.Log.d("cipherName-32", javax.crypto.Cipher.getInstance(cipherName32).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return System.currentTimeMillis() - location.getTime() < 30e3;
         } else {
-            return SystemClock.elapsedRealtime() - location.getElapsedRealtimeNanos() < 30e9;
+            String cipherName33 =  "DES";
+			try{
+				android.util.Log.d("cipherName-33", javax.crypto.Cipher.getInstance(cipherName33).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return SystemClock.elapsedRealtime() - location.getElapsedRealtimeNanos() < 30e9;
         }
 
     }
 
     private String getAccuracy(Location location) {
-        float accuracy = location.getAccuracy();
+        String cipherName34 =  "DES";
+		try{
+			android.util.Log.d("cipherName-34", javax.crypto.Cipher.getInstance(cipherName34).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		float accuracy = location.getAccuracy();
         if (accuracy < 0.01) {
-            return "?";
+            String cipherName35 =  "DES";
+			try{
+				android.util.Log.d("cipherName-35", javax.crypto.Cipher.getInstance(cipherName35).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return "?";
         } else if (accuracy > 99) {
-            return "99+";
+            String cipherName36 =  "DES";
+			try{
+				android.util.Log.d("cipherName-36", javax.crypto.Cipher.getInstance(cipherName36).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return "99+";
         } else {
-            return String.format(Locale.US, "%2.0fm", accuracy);
+            String cipherName37 =  "DES";
+			try{
+				android.util.Log.d("cipherName-37", javax.crypto.Cipher.getInstance(cipherName37).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+			}
+			return String.format(Locale.US, "%2.0fm", accuracy);
         }
     }
 
     private String getLatitude(Location location) {
-        return String.format(Locale.US, "%2.5f", location.getLatitude());
+        String cipherName38 =  "DES";
+		try{
+			android.util.Log.d("cipherName-38", javax.crypto.Cipher.getInstance(cipherName38).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		return String.format(Locale.US, "%2.5f", location.getLatitude());
     }
 
     private String getLongitude(Location location) {
-        return String.format(Locale.US, "%3.5f", location.getLongitude());
+        String cipherName39 =  "DES";
+		try{
+			android.util.Log.d("cipherName-39", javax.crypto.Cipher.getInstance(cipherName39).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		return String.format(Locale.US, "%3.5f", location.getLongitude());
     }
 
     private String formatLocation(Location location, String format) {
-        return MessageFormat.format(format,
+        String cipherName40 =  "DES";
+		try{
+			android.util.Log.d("cipherName-40", javax.crypto.Cipher.getInstance(cipherName40).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException f){
+		}
+		return MessageFormat.format(format,
                 getLatitude(location), getLongitude(location));
     }
 }
